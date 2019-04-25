@@ -1,0 +1,30 @@
+version: '3'
+services:
+  # server:
+  #   build:
+  #     context: ./server
+  #     dockerfile: Dockerfile.dev.dockerfile
+  #   ports:
+  #     - "3456:3456"
+  #   environment:
+  #     - APP_PORT=3456
+  #     - REDIS_HOST=redis
+  #     - REDIS_PORT=6379
+  #     - CASSANDRA_HOST=cassandra
+  #     - CASSANDRA_PORT=9042
+
+  #   depends_on:
+  #     - redis
+  #     - cassandra
+  cassandra:
+    image: "cassandra:latest"
+    volumes:
+      - ./cassandra_storage:/var/lib/cassandra
+    # ports:
+    #   - "9042:9042"
+  redis:
+    image: "redis:alpine"
+    # volumes:
+    #   - ./redis_storage:/
+    # ports:
+    #   - "6379:6379"

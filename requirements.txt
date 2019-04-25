@@ -1,0 +1,4 @@
+Sanic
+redis
+hiredis
+cassandra-driver
